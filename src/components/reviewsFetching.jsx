@@ -13,7 +13,7 @@ class ReviewsFetching extends Component {
         
     }
     componentDidMount(){
-        fetch(`https://reviews--app.herokuapp.com/http://www.i2ce.in/reviews/${this.props.match.params.product_id}/${this.props.match.params.viewer_id}`)
+        fetch(`http://www.i2ce.in/reviews/${this.props.match.params.product_id}/${this.props.match.params.viewer_id}`)
         .then(res=>res.json())
         .then(data => this.setState({
             reviews: data.reviews
