@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Product from './components/Product/ProductId'
+import Viewer from './components/viewerid'
+import ReviewsFetching from './components/reviewsFetching'
+import moreRatings from './components/moreRatings.jsx'
+import {Switch, Route} from 'react-router-dom';
+import reviewStructure from './components/reviewStructure';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <switch>
+    <Route exact path='/' component={Product}/>
+    <Route exact path='/Product/:product_id/' component ={Viewer} />
+    <Route exact path ='/Product/:product_id/Viewer/:viewer_id/' component={ReviewsFetching} />
+    </switch>
   );
 }
 
